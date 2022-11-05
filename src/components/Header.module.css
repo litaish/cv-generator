@@ -1,0 +1,12 @@
+header {
+    width: 100%;
+    border-bottom: 5px solid #C4AEA3;
+    text-align: center;
+}
+header > h3 {
+    color: #896B5C;
+    font-weight: 600;
+    font-size: 4rem;
+    font-family: 'Noto Sans', sans-serif;
+    margin: 1.75rem;
+}
