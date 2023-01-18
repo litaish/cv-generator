@@ -12,7 +12,7 @@ class Skills extends React.Component {
             <div className={FormStyles.group}>
               <div className={FormStyles.row}>
                 <label htmlFor="skills">Skills (Write skill in new line)</label>
-                <textarea id="skills"></textarea>
+                <textarea id="skills" placeholder="Java"></textarea>
               </div>
             </div>
           </div>
