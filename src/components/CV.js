@@ -1,5 +1,5 @@
 import React from "react";
-import CVStyles from "./CV.module.css";
+import CVStyles from "../styles/CV.module.css";
 import CVGeneral from "./CVGeneral";
 import CVSkills from "./CVSkills";
 import CVExperience from "./CVExperience";

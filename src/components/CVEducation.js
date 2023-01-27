@@ -1,5 +1,5 @@
 import React from "react";
-import CVStyles from "./CV.module.css";
+import CVStyles from "../styles/CV.module.css";
 
 class CVEducation extends React.Component {
   render() {
@@ -11,9 +11,7 @@ class CVEducation extends React.Component {
             <p className={CVStyles.item__dated__date}>
               <span>2000</span> - <span>2004</span>
             </p>
-            <p className={CVStyles.item__dated__establishment}>
-              Harvard
-            </p>
+            <p className={CVStyles.item__dated__establishment}>Harvard</p>
             <p className={CVStyles.item__dated__description}>
               Bachelors degree in Computer Science
             </p>

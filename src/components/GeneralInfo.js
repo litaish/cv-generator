@@ -1,6 +1,5 @@
 import React from "react";
-import Form from "./Form";
-import FormStyles from "./Form.module.css";
+import FormStyles from "../styles/Form.module.css";
 
 class GeneralInfo extends React.Component {
   render() {

@@ -1,5 +1,5 @@
 import React from "react";
-import CVStyles from "./CV.module.css";
+import CVStyles from "../styles/CV.module.css";
 
 class CVSkills extends React.Component {
   render() {

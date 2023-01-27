@@ -1,4 +1,4 @@
-import AppStyles from "./App.module.css";
+import AppStyles from "./styles/App.module.css";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import CV from "./components/CV";

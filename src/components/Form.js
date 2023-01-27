@@ -1,5 +1,5 @@
 import React from "react";
-import FormStyles from "./Form.module.css";
+import FormStyles from "../styles/Form.module.css";
 import GeneralInfo from "./GeneralInfo";
 import Skills from "./Skills";
 import Education from "./Education";
