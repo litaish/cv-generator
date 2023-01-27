@@ -1,12 +1,14 @@
-import AppStyles from './App.module.css';
-import Header from './components/Header';
-import Form from './components/Form';
+import AppStyles from "./App.module.css";
+import Header from "./components/Header";
+import Form from "./components/Form";
+import CV from "./components/CV";
 
 function App() {
   return (
     <div className={AppStyles.container}>
       <Header />
       <Form />
+      <CV />
     </div>
   );
 }

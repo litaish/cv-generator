@@ -34,6 +34,16 @@ class Experience extends React.Component {
             <label htmlFor="job_end">End Date</label>
             <input id="job_end" type="date"></input>
           </div>
+          <div className={FormStyles.row}>
+            <div className={FormStyles.options}>
+              <button className={FormStyles.button__red} type="button">
+                Delete
+              </button>
+              <button className={FormStyles.button__green} type="button">
+                Add
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     );
