@@ -2,6 +2,10 @@ import React from "react";
 import CVStyles from "../styles/CV.module.css";
 
 class CVGeneral extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  
   render() {
     return (
       <div className={CVStyles.item}>

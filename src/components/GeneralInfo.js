@@ -31,12 +31,16 @@ class GeneralInfo extends React.Component {
             ></input>
           </div>
           <div className={FormStyles.row}>
-            <label htmlFor="email">GitHub</label>
+            <label htmlFor="github">GitHub</label>
             <input
-              id="email"
+              id="github"
               type="text"
               placeholder="github.com/mygithub"
             ></input>
+          </div>
+          <div className={FormStyles.row}>
+            <label htmlFor="about_me">About me</label>
+            <textarea id="skills" placeholder="I am funny"></textarea>
           </div>
         </div>
       </div>
