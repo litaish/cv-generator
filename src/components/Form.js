@@ -16,6 +16,9 @@ class Form extends React.Component {
         <Skills />
         <Education />
         <Experience />
+        <div className={FormStyles.row_submit}>
+          <button className={FormStyles.submit}>Submit</button>
+        </div>
       </form>
     );
   }
