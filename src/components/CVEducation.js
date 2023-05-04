@@ -1,5 +1,6 @@
 import React from "react";
 import CVStyles from "../styles/CV.module.css";
+import CVTitle from "./CVTitle";
 
 class CVEducation extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class CVEducation extends React.Component {
 
     return (
       <div className={CVStyles.item}>
-        <div className={CVStyles.item__title}>Education</div>
+        <CVTitle title="Education"/>
         <div className={CVStyles.item__content}>
           <div className={CVStyles.item__dated}>
             <p className={CVStyles.item__dated__date}>

@@ -1,5 +1,6 @@
 import React from "react";
 import CVStyles from "../styles/CV.module.css";
+import CVTitle from "./CVTitle";
 
 class CVGeneral extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class CVGeneral extends React.Component {
 
     return (
       <div className={CVStyles.item}>
-        <div className={CVStyles.item__title}>General Information</div>
+        <CVTitle title="General Information"/>
         <div className={CVStyles.item__content}>
           <p className={CVStyles.general__content}>
             {desc}

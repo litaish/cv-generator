@@ -1,5 +1,6 @@
 import React from "react";
 import CVStyles from "../styles/CV.module.css";
+import CVTitle from "./CVTitle";
 
 class CVSkills extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class CVSkills extends React.Component {
 
     return (
       <div className={CVStyles.item}>
-        <div className={CVStyles.item__title}>Skills</div>
+        <CVTitle title="SKills" />
         <div className={CVStyles.item__content}>
           <ul className={CVStyles.skills__content}>
             { /* Check if skills array is defined */}

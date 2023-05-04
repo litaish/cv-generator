@@ -1,5 +1,6 @@
 import React from "react";
 import CVStyles from "../styles/CV.module.css";
+import CVTitle from "./CVTitle";
 
 class CVExperience extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class CVExperience extends React.Component {
 
     return (
       <div className={CVStyles.item}>
-        <div className={CVStyles.item__title}>Experience</div>
+        <CVTitle title="Experience"/>
         <div className={CVStyles.item__content}>
           <div className={CVStyles.item__dated}>
             <p className={CVStyles.item__dated__date}>
