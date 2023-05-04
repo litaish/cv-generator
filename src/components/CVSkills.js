@@ -3,10 +3,6 @@ import CVStyles from "../styles/CV.module.css";
 import CVTitle from "./CVTitle";
 
 class CVSkills extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const { skills } = this.props;
 

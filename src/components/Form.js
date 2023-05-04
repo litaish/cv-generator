@@ -6,9 +6,6 @@ import Education from "./Education";
 import Experience from "./Experience";
 
 class Form extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <form className={FormStyles.form}>

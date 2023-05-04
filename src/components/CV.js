@@ -27,10 +27,10 @@ class CV extends React.Component {
             </div>
           </div>
           <div className={CVStyles.content}>
-            <CVGeneral />
-            <CVSkills />
-            <CVExperience />
-            <CVEducation />
+            <CVGeneral general={general}/>
+            <CVSkills skills={skills}/>
+            <CVExperience experience={experience}/>
+            <CVEducation education={education}/>
           </div>
         </div>
       </div>

@@ -3,19 +3,15 @@ import CVStyles from "../styles/CV.module.css";
 import CVTitle from "./CVTitle";
 
 class CVGeneral extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  
   render() {
-    const { desc } = this.props;
+    const { general } = this.props;
 
     return (
       <div className={CVStyles.item}>
         <CVTitle title="General Information"/>
         <div className={CVStyles.item__content}>
           <p className={CVStyles.general__content}>
-            {desc}
+            {general && general.desc}
           </p>
         </div>
       </div>
