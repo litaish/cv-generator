@@ -7,16 +7,17 @@ class CVSkills extends React.Component {
   }
 
   render() {
+    const { skills } = this.props;
 
     return (
       <div className={CVStyles.item}>
         <div className={CVStyles.item__title}>Skills</div>
         <div className={CVStyles.item__content}>
           <ul className={CVStyles.skills__content}>
-            <li>C#</li>
-            <li>JavaScript</li>
-            <li>Java</li>
-            <li>C++</li>
+            { /* Check if skills array is defined */}
+            {skills && skills.map(skill => {
+              return <li>{skill}</li>;
+            })}
           </ul>
         </div>
       </div>

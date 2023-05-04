@@ -7,21 +7,22 @@ import CVEducation from "./CVEducation";
 
 class CV extends React.Component {
   render() {
+    const { general, skills, experience, education } = this.props;
     return (
       <div className={CVStyles.wrapper}>
         <h5>Your Generated CV Example</h5>
         <div className={CVStyles.cv}>
           <div className={CVStyles.header}>
-            <h1 className={CVStyles.name}>Jonathan Sanders</h1>
+            <h1 className={CVStyles.name}>{general && general.name}</h1>
             <div className={CVStyles.contact}>
               <p>
-                <span>Phone Number:</span>+371348838382
+                <span>Phone Number:</span>{general && general.phone}
               </p>
               <p>
-                <span>GitHub:</span>github.com/mygithub
+                <span>GitHub:</span>{general && general.github}
               </p>
               <p>
-                <span>E-mail address:</span>example@gmail.com
+                <span>E-mail address:</span>{general && general.email}
               </p>
             </div>
           </div>

@@ -7,12 +7,14 @@ class CVGeneral extends React.Component {
   }
   
   render() {
+    const { desc } = this.props;
+
     return (
       <div className={CVStyles.item}>
         <div className={CVStyles.item__title}>General Information</div>
         <div className={CVStyles.item__content}>
           <p className={CVStyles.general__content}>
-            This is something really interesting about myself.
+            {desc}
           </p>
         </div>
       </div>

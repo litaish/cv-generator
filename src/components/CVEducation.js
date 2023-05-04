@@ -5,20 +5,21 @@ class CVEducation extends React.Component {
   constructor(props) {
     super(props)
   }
-  
+
   render() {
-    
+    const { institution, program, startDate, endDate } = this.props;
+
     return (
       <div className={CVStyles.item}>
         <div className={CVStyles.item__title}>Education</div>
         <div className={CVStyles.item__content}>
           <div className={CVStyles.item__dated}>
             <p className={CVStyles.item__dated__date}>
-              <span>2000</span> - <span>2004</span>
+              <span>{startDate}</span> - <span>{endDate}</span>
             </p>
-            <p className={CVStyles.item__dated__establishment}>Harvard</p>
+            <p className={CVStyles.item__dated__establishment}>{institution}</p>
             <p className={CVStyles.item__dated__description}>
-              Bachelors degree in Computer Science
+              {program}
             </p>
           </div>
         </div>

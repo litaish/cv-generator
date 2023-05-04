@@ -19,21 +19,13 @@ class Education extends React.Component {
             ></input>
           </div>
           <div className={FormStyles.row}>
-            <label htmlFor="ed_program">Program</label>
-            <input
-              id="ed_program"
-              type="text"
-              placeholder="Computer Science"
-            ></input>
-          </div>
-          <div className={FormStyles.row}>
             <label htmlFor="ed_level">
-              Education Level (e.g Bachelors degree)
+              Education Level (e.g Bachelors degree) and Program
             </label>
             <input
               id="ed_level"
               type="text"
-              placeholder="Master's degree"
+              placeholder="Master's degree in Computer Science"
             ></input>
           </div>
           <div className={FormStyles.row}>
