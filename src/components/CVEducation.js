@@ -12,7 +12,7 @@ class CVEducation extends React.Component {
         <div className={CVStyles.item__content}>
           <div className={CVStyles.item__dated}>
             <p className={CVStyles.item__dated__date}>
-              <span>{education && education.startDate}</span> - <span>{education && education.startDate}</span>
+              <span>{education && education.startDate}</span> - <span>{education && education.endDate}</span>
             </p>
             <p className={CVStyles.item__dated__establishment}>{education && education.institution}</p>
             <p className={CVStyles.item__dated__description}>
