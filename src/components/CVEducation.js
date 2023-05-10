@@ -4,22 +4,27 @@ import CVTitle from "./CVTitle";
 
 class CVEducation extends React.Component {
   render() {
-    const { education } = this.props;
+    const { educationSections } = this.props;
 
     return (
       <div className={CVStyles.item}>
         <CVTitle title="Education" />
-        <div className={CVStyles.item__content}>
-          <div className={CVStyles.item__dated}>
-            <p className={CVStyles.item__dated__date}>
-              <span>{education && education.startDate}</span> - <span>{education && education.endDate}</span>
-            </p>
-            <p className={CVStyles.item__dated__establishment}>{education && education.institution}</p>
-            <p className={CVStyles.item__dated__description}>
-              {education && education.program}
-            </p>
-          </div>
-        </div>
+
+        {educationSections.map(education => {
+          return (
+            <div key={education.id} className={CVStyles.item__content}>
+              <div className={CVStyles.item__dated}>
+                <p className={CVStyles.item__dated__date}>
+                  <span>{education.startDate}</span> - <span>{education.endDate}</span>
+                </p>
+                <p className={CVStyles.item__dated__establishment}>{education.institution}</p>
+                <p className={CVStyles.item__dated__description}>
+                  {education.program}
+                </p>
+              </div>
+            </div>
+          )
+        })}
       </div>
     );
   }

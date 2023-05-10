@@ -8,13 +8,14 @@ class CVSkills extends React.Component {
 
     return (
       <div className={CVStyles.item}>
-        <CVTitle title="SKills" />
+        <CVTitle title="Skills" />
         <div className={CVStyles.item__content}>
           <ul className={CVStyles.skills__content}>
-            { /* Check if skills array is defined */}
+
             {skills && skills.map(skill => {
-              return <li>{skill}</li>;
+              return <li key={skill.id}>{skill.title}</li>;
             })}
+
           </ul>
         </div>
       </div>

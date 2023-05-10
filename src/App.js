@@ -3,40 +3,60 @@ import Header from "./components/Header";
 import Form from "./components/Form";
 import CV from "./components/CV";
 import { Component } from "react";
+import uniqid from "uniqid";
 
 class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      generalSections: [{
-        name: "George Bush",
-        phone: 123,
-        email: "example@email.com",
+      general: {
+        name: "Alexandra Johnson",
+        phone: "(415)123-4567",
+        email: "github.com/alexandraj",
         github: "github.com/mygithub",
-        desc: "Something about me",
+        desc: "Creative software engineer with a passion for artificial intelligence and sustainability",
+      },
+      skills: [{
+        id: uniqid(),
+        title: "Java"
+      },
+      {
+        id: uniqid(),
+        title: "C#"
+      },
+      {
+        id: uniqid(),
+        title: "Machine Learning"
       }],
-      skills: ["Java", "C#", "Python"],
       educationSections: [{
-        institution: "Yale",
-        program: "Master's degree in Business",
-        startDate: "01/02/03",
-        endDate: "02/03/04",
+        id: uniqid(),
+        institution: "Massachusetts Institute of Technology",
+        program: "Bachelor's degree in Computer Science",
+        startDate: "08/01/2016",
+        endDate: "06/01/2020",
       }],
       experienceSections: [{
-        company: "Microsoft",
-        desc: "Made many AI solutions",
-        startDate: "06/08/09",
-        endDate: "10/11/11",
+        id: uniqid(),
+        company: "Tesla",
+        position: "Software Engineer",
+        desc: "Implemented machine learning algorithms for autonomous driving systems",
+        startDate: "07/01/2020",
+        endDate: "07/01/2022",
       }]
     }
   }
   render() {
+    const { general, skills, educationSections, experienceSections } = this.state;
     return (
       <div className={AppStyles.container}>
         <Header />
         <Form />
-        <CV />
+        <CV general={general}
+          skills={skills}
+          educationSections={educationSections}
+          experienceSections={experienceSections}
+        />
       </div>
     )
   }
