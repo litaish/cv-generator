@@ -30,7 +30,7 @@
   flex-direction: column;
   gap: 1rem;
 }
-.row_submit {
+.row_btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,12 +94,11 @@ textarea:focus {
 }.button__red:hover {
   background-color: #74504b;
 }
-.submit {
+.btn__form__action {
   width: 50%;
   padding: 1rem 5rem;
   outline: none;
   border: none;
-  background-color: #a16207;
   border-radius: 3px;
   font-size: 1.75rem;
   color: white;
@@ -107,6 +106,15 @@ textarea:focus {
   cursor: pointer;
   transition: .3s;
 }
-.submit:hover {
+.btn__submit {
+  background-color: #a16207;
+}
+.btn__submit:hover {
   background-color: #bc7106;
+}
+.btn__load {
+  background-color: #308d05;
+}
+.btn__load:hover {
+  background-color: #1f5a04;
 }

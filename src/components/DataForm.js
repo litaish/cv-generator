@@ -4,36 +4,40 @@ import GeneralInfo from "./GeneralInfo";
 import Skills from "./Skills";
 import Education from "./Education";
 import Experience from "./Experience";
+import JSONExample from "../json/example.json";
 
 class DataForm extends React.Component {
   constructor(props) {
     super(props)
 
+    this.example = JSONExample; // Automatic JSON parsing
+
     this.state = {
       general: {
-        name: "Alexandra Johnson",
-        phone: "(415)123-4567",
-        email: "alex@gmail.com",
-        github: "github.com/mygithub",
-        about: "Creative software engineer with a passion for artificial intelligence and sustainability"
+        name: "",
+        phone: "",
+        email: "",
+        github: "",
+        about: ""
       },
       education: {
-        institution: "Massachusetts Institute of Technology",
-        program: "Bachelor's degree in Computer Science",
-        startDate: "08/01/2016",
-        endDate: "06/01/2020",
+        institution: "",
+        program: "",
+        startDate: "",
+        endDate: "",
       },
       experience: {
-        company: "Tesla",
-        desc: "Implemented machine learning algorithms for autonomous driving systems",
-        startDate: "07/01/2020",
-        endDate: "07/01/2022",
+        company: "",
+        desc: "",
+        startDate: "",
+        endDate: "",
       },
-      skills: ["Python", "ML", "Algorithms and Data Structures"],
+      skills: [],
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleAddSkill = this.handleAddSkill.bind(this);
+    this.handleLoadExample = this.handleLoadExample.bind(this);
   }
 
   // Spread operator to get all previous properties, so a new object does not get created every time a change happens
@@ -49,6 +53,15 @@ class DataForm extends React.Component {
   handleAddSkill(e) {
     this.setState({
       skills: e.target.value.split("\n") // Not wrapped in brackets because split method returns an array
+    })
+  }
+
+  handleLoadExample() {
+    this.setState({
+      general: this.example.general,
+      education: this.example.education,
+      experience: this.example.experience,
+      skills: this.example.skills
     })
   }
 
@@ -74,8 +87,13 @@ class DataForm extends React.Component {
         <Experience
           handleInputChange={(e) => this.handleInputChange(e, "experience")}
         />
-        <div className={FormStyles.row_submit}>
-          <button className={FormStyles.submit}>Submit</button>
+        <div
+          onClick={this.handleLoadExample}
+          className={FormStyles.row_btn}>
+          <button className={`${FormStyles.btn__form__action} ${FormStyles.btn__load}`}>Load an Example</button>
+        </div>
+        <div className={FormStyles.row_btn}>
+          <button className={`${FormStyles.btn__form__action} ${FormStyles.btn__submit}`}>Submit Your Data</button>
         </div>
       </form>
     );
