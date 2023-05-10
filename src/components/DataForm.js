@@ -41,14 +41,14 @@ class DataForm extends React.Component {
     this.setState(prevState => ({
       [sectionName]: {
         ...prevState[sectionName],
-        [e.target.name]: e.target.value.split("\n") // Split each skill by new line
+        [e.target.name]: e.target.value // Split each skill by new line
       }
     }))
   }
 
   handleAddSkill(e) {
     this.setState({
-      skills: [e.target.value]
+      skills: e.target.value.split("\n") // Not wrapped in brackets because split method returns an array
     })
   }
 
