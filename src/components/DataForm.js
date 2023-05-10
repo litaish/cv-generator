@@ -11,25 +11,25 @@ class DataForm extends React.Component {
 
     this.state = {
       general: {
-        name: "",
-        phone: "",
-        email: "",
-        github: "",
-        about: ""
+        name: "Alexandra Johnson",
+        phone: "(415)123-4567",
+        email: "alex@gmail.com",
+        github: "github.com/mygithub",
+        about: "Creative software engineer with a passion for artificial intelligence and sustainability"
       },
       education: {
-        institution: "",
-        program: "",
-        startDate: "",
-        endDate: "",
+        institution: "Massachusetts Institute of Technology",
+        program: "Bachelor's degree in Computer Science",
+        startDate: "08/01/2016",
+        endDate: "06/01/2020",
       },
       experience: {
-        company: "",
-        desc: "",
-        startDate: "",
-        endDate: "",
+        company: "Tesla",
+        desc: "Implemented machine learning algorithms for autonomous driving systems",
+        startDate: "07/01/2020",
+        endDate: "07/01/2022",
       },
-      skills: [],
+      skills: ["Python", "ML", "Algorithms and Data Structures"],
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
