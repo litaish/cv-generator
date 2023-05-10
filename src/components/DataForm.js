@@ -5,7 +5,7 @@ import Skills from "./Skills";
 import Education from "./Education";
 import Experience from "./Experience";
 
-class Form extends React.Component {
+class DataForm extends React.Component {
   constructor(props) {
     super(props)
 
@@ -33,6 +33,7 @@ class Form extends React.Component {
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleAddSkill = this.handleAddSkill.bind(this);
   }
 
   // Spread operator to get all previous properties, so a new object does not get created every time a change happens
@@ -52,9 +53,15 @@ class Form extends React.Component {
   }
 
   render() {
-    const { handleSubmit } = this.props;
+    const { submitForm } = this.props;
+
     return (
-      <form onSubmit={() => handleSubmit({})} className={FormStyles.form}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          submitForm(this.state);
+        }}
+        className={FormStyles.form}>
         <GeneralInfo
           handleInputChange={(e) => this.handleInputChange(e, "general")}
         />
@@ -75,4 +82,4 @@ class Form extends React.Component {
   }
 }
 
-export default Form;
+export default DataForm;

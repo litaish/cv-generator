@@ -1,6 +1,7 @@
 import React from "react";
 import CVStyles from "../styles/CV.module.css";
 import CVTitle from "./CVTitle";
+import uniqid from 'uniqid';
 
 class CVSkills extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class CVSkills extends React.Component {
           <ul className={CVStyles.skills__content}>
 
             {skills && skills.map(skill => {
-              return <li key={skill.id}>{skill.title}</li>;
+              return <li key={uniqid()}>{skill.title}</li>;
             })}
 
           </ul>

@@ -8,7 +8,7 @@ import CVContact from "./CVContact";
 
 class CV extends React.Component {
   render() {
-    const { general, skills, experienceSections, educationSections } = this.props;
+    const { general, education, experience, skills } = this.props;
 
     return (
       <div className={CVStyles.wrapper}>
@@ -16,10 +16,18 @@ class CV extends React.Component {
         <div className={CVStyles.cv}>
           <CVContact general={general} />
           <div className={CVStyles.content}>
-            <CVGeneral general={general} />
-            <CVSkills skills={skills} />
-            <CVExperience experienceSections={experienceSections} />
-            <CVEducation educationSections={educationSections} />
+            <CVGeneral
+              general={general}
+            />
+            <CVSkills
+              skills={skills}
+            />
+            <CVExperience
+              experience={experience}
+            />
+            <CVEducation
+              education={education}
+            />
           </div>
         </div>
       </div>

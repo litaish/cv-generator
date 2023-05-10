@@ -8,10 +8,10 @@ class CVGeneral extends React.Component {
 
     return (
       <div className={CVStyles.item}>
-        <CVTitle title="General Information"/>
+        <CVTitle title="General Information" />
         <div className={CVStyles.item__content}>
           <p className={CVStyles.general__content}>
-            {general && general.desc}
+            {general && general.about}
           </p>
         </div>
       </div>
