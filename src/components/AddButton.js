@@ -5,7 +5,7 @@ class AddButton extends React.Component {
     render() {
         return (
             <button className={FormStyles.button__green} type="button">
-                Add
+                Add Section
             </button>
         );
     }

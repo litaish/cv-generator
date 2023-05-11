@@ -5,7 +5,7 @@ class DeleteButton extends React.Component {
     render() {
         return (
             <button className={FormStyles.button__red} type="button">
-                Delete
+                Delete Section
             </button>
         );
     }
