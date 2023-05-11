@@ -96,12 +96,12 @@ class DataForm extends React.Component {
   }
 
   handleLoadExampleData(json) {
-    const { general, education, experience, skills } = json;
+    const { general, educationSections, experienceSections, skills } = json;
 
     this.setState({
       general, // Can use, because state has same names
-      education,
-      experience,
+      educationSections,
+      experienceSections,
       skills
     })
   }

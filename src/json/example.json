@@ -1,27 +1,48 @@
 {
-    "general": {
-      "name": "Alexandra Johnson",
-      "phone": "(415)123-4567",
-      "email": "alexa@hotmail.com",
-      "github": "github.com/mygithub",
-      "about": "Creative software engineer with a passion for artificial intelligence and sustainability"
-    },
-    "education": {
+  "general": {
+    "name": "Alexandra Johnson",
+    "phone": "(415)123-4567",
+    "email": "alexa@hotmail.com",
+    "github": "github.com/mygithub",
+    "about": "Creative software engineer with a passion for artificial intelligence and sustainability"
+  },
+  "educationSections": [
+    {
+      "id": "EB3IB5EL99",
       "institution": "Massachusetts Institute of Technology",
       "program": "Bachelor's degree in Computer Science",
       "startDate": "08/01/2016",
       "endDate": "06/01/2020"
     },
-    "experience": {
+    {
+      "id": "0RAPY8V7X0",
+      "institution": "Stanford University",
+      "program": "Bachelor's degree in Electrical Engineering",
+      "startDate": "09/01/2015",
+      "endDate": "06/15/2019"
+    }
+  ],
+  "experienceSections": [
+    {
+      "id": "IA84GEU9QU",
       "company": "Tesla",
       "position": "Software Engineer",
       "desc": "Implemented machine learning algorithms for autonomous driving systems",
       "startDate": "07/01/2020",
       "endDate": "07/01/2022"
     },
-    "skills": [
-      "Python",
-      "ML",
-      "Algoritms and Data Structures"
-    ]
-  }
+    {
+      "id": "S02CRSZ52M",
+      "company": "Google",
+      "position": "Data Scientist",
+      "desc": "Developed predictive models for search engine optimization",
+      "startDate": "08/15/2019",
+      "endDate": "08/15/2021"
+    }
+  ],
+  "skills": [
+    "Python",
+    "ML",
+    "Algoritms and Data Structures"
+  ]
+}
