@@ -9,7 +9,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      formData: {}
+      formData: {},
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);

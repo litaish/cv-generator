@@ -7,11 +7,28 @@ import Experience from "./Experience";
 import JSONExample from "../json/example.json";
 import JSONCleared from "../json/cleared.json";
 import AddButton from "./AddButton";
-import DeleteButton from "./AddButton";
+import DeleteButton from "./DeleteButton";
+import uniqid from 'uniqid';
 
 class DataForm extends React.Component {
   constructor(props) {
     super(props)
+
+    const initialExperience = {
+      id: uniqid(),
+      company: "",
+      desc: "",
+      startDate: "",
+      endDate: "",
+    }
+
+    const initialEducation = {
+      id: uniqid(),
+      company: "",
+      desc: "",
+      startDate: "",
+      endDate: "",
+    }
 
     this.state = {
       general: {
@@ -21,25 +38,18 @@ class DataForm extends React.Component {
         github: "",
         about: ""
       },
-      education: {
-        institution: "",
-        program: "",
-        startDate: "",
-        endDate: "",
-      },
-      experience: {
-        company: "",
-        desc: "",
-        startDate: "",
-        endDate: "",
-      },
       skills: [],
+      experience: initialExperience,
+      education: initialEducation,
+      experienceSections: [initialExperience],
+      educationSections: [initialEducation]
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleAddSkill = this.handleAddSkill.bind(this);
     this.handleLoadExampleData = this.handleLoadExampleData.bind(this);
     this.renderSectionOptions = this.renderSectionOptions.bind(this);
+    this.handleAddSection = this.handleAddSection.bind(this);
   }
 
   // Spread operator to get all previous properties, so a new object does not get created every time a change happens
@@ -73,7 +83,9 @@ class DataForm extends React.Component {
     if (isFirstItem) {
       return (
         <>
-          <AddButton />
+          <AddButton
+            addSection={this.handleAddSection}
+          />
         </>
       )
     } else {
@@ -86,8 +98,15 @@ class DataForm extends React.Component {
     }
   }
 
+  handleAddSection(section, item) {
+    this.setState(prevState => ({
+      [section]: [prevState.section, item]
+    }))
+  }
+
   render() {
     const { submitForm } = this.props;
+    const { educationSections, experienceSections } = this.state;
 
     return (
       <form
@@ -102,14 +121,27 @@ class DataForm extends React.Component {
         <Skills
           handleAddSkill={this.handleAddSkill}
         />
-        <Education
-          renderSectionOptions={() => this.renderSectionOptions(true)}
-          handleInputChange={(e) => this.handleInputChange(e, "education")}
-        />
-        <Experience
-          renderSectionOptions={() => this.renderSectionOptions(true)}
-          handleInputChange={(e) => this.handleInputChange(e, "experience")}
-        />
+
+        {educationSections.map(education => { // Rendering all education form sections
+          return (
+            <Education
+              key={education.id}
+              renderSectionOptions={() => this.renderSectionOptions(true)}
+              handleInputChange={(e) => this.handleInputChange(e, "education")}
+            />
+          )
+        })}
+
+        {experienceSections.map(experience => { // Rendering all experience form sections
+          return (
+            <Experience
+              key={experience.id}
+              renderSectionOptions={() => this.renderSectionOptions(true)}
+              handleInputChange={(e) => this.handleInputChange(e, "experience")}
+            />
+          )
+        })}
+
         <div
           onClick={() => this.handleLoadExampleData(JSONExample)}
           className={FormStyles.row_btn}>
