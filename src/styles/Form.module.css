@@ -118,3 +118,9 @@ textarea:focus {
 .btn__load:hover {
   background-color: #1f5a04;
 }
+.btn__clear {
+  background-color: #dc2626;
+}
+.btn__clear:hover {
+  background-color: #920f0f;
+}

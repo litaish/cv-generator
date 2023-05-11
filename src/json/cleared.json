@@ -1,0 +1,22 @@
+{
+    "general": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "github": "",
+      "about": ""
+    },
+    "education": {
+      "institution": "",
+      "program": "",
+      "startDate": "",
+      "endDate": ""
+    },
+    "experience": {
+      "company": "",
+      "desc": "",
+      "startDate": "",
+      "endDate": ""
+    },
+    "skills": []
+  }

@@ -5,6 +5,7 @@ import Skills from "./Skills";
 import Education from "./Education";
 import Experience from "./Experience";
 import JSONExample from "../json/example.json";
+import JSONCleared from "../json/cleared.json";
 
 class DataForm extends React.Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class DataForm extends React.Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleAddSkill = this.handleAddSkill.bind(this);
-    this.handleLoadExample = this.handleLoadExample.bind(this);
+    this.handleLoadExampleData = this.handleLoadExampleData.bind(this);
   }
 
   // Spread operator to get all previous properties, so a new object does not get created every time a change happens
@@ -54,8 +55,8 @@ class DataForm extends React.Component {
     })
   }
 
-  handleLoadExample() {
-    const { general, education, experience, skills } = JSONExample;
+  handleLoadExampleData(json) {
+    const { general, education, experience, skills } = json;
 
     this.setState({
       general, // Can use, because state has same names
@@ -88,9 +89,14 @@ class DataForm extends React.Component {
           handleInputChange={(e) => this.handleInputChange(e, "experience")}
         />
         <div
-          onClick={this.handleLoadExample}
+          onClick={() => this.handleLoadExampleData(JSONExample)}
           className={FormStyles.row_btn}>
           <button className={`${FormStyles.btn__form__action} ${FormStyles.btn__load}`}>Load an Example</button>
+        </div>
+        <div
+          onClick={() => this.handleLoadExampleData(JSONCleared)}
+          className={FormStyles.row_btn}>
+          <button className={`${FormStyles.btn__form__action} ${FormStyles.btn__clear}`}>Clear CV</button>
         </div>
         <div className={FormStyles.row_btn}>
           <button className={`${FormStyles.btn__form__action} ${FormStyles.btn__submit}`}>Submit Your Data</button>
