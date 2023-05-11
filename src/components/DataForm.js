@@ -16,6 +16,7 @@ class DataForm extends React.Component {
 
     const initialExperience = {
       id: uniqid(),
+      isInitial: true,
       company: "",
       desc: "",
       startDate: "",
@@ -24,6 +25,7 @@ class DataForm extends React.Component {
 
     const initialEducation = {
       id: uniqid(),
+      isInitial: true,
       company: "",
       desc: "",
       startDate: "",
@@ -39,9 +41,9 @@ class DataForm extends React.Component {
         about: ""
       },
       skills: [],
-      experience: initialExperience,
+      experience: initialExperience, // Define experience state object as initialExperience at first
       education: initialEducation,
-      experienceSections: [initialExperience],
+      experienceSections: [initialExperience], // Add initialExperience object to experienceSections array
       educationSections: [initialEducation]
     }
 
@@ -57,7 +59,7 @@ class DataForm extends React.Component {
     this.setState(prevState => ({
       [sectionName]: {
         ...prevState[sectionName],
-        [e.target.name]: e.target.value // Split each skill by new line
+        [e.target.name]: e.target.value
       }
     }))
   }
@@ -79,8 +81,9 @@ class DataForm extends React.Component {
     })
   }
 
-  renderSectionOptions(isFirstItem) {
-    if (isFirstItem) {
+  // Checks if component is initial (first), so it doesn't render a delete section button for it
+  renderSectionOptions(isInitial) {
+    if (isInitial) {
       return (
         <>
           <AddButton
@@ -100,7 +103,7 @@ class DataForm extends React.Component {
 
   handleAddSection(section, item) {
     this.setState(prevState => ({
-      [section]: [prevState.section, item]
+      [section]: [prevState[section], item] // Access section from prevState via array, not dot notation
     }))
   }
 
@@ -122,21 +125,23 @@ class DataForm extends React.Component {
           handleAddSkill={this.handleAddSkill}
         />
 
-        {educationSections.map(education => { // Rendering all education form sections
+        { /* Dynamically load education and experience sections by arrays in state */}
+
+        {educationSections.map(education => {
           return (
             <Education
               key={education.id}
-              renderSectionOptions={() => this.renderSectionOptions(true)}
+              renderSectionOptions={() => this.renderSectionOptions(education.isInitial)} 
               handleInputChange={(e) => this.handleInputChange(e, "education")}
             />
           )
         })}
 
-        {experienceSections.map(experience => { // Rendering all experience form sections
+        {experienceSections.map(experience => {
           return (
             <Experience
               key={experience.id}
-              renderSectionOptions={() => this.renderSectionOptions(true)}
+              renderSectionOptions={() => this.renderSectionOptions(experience.isInitial)}
               handleInputChange={(e) => this.handleInputChange(e, "experience")}
             />
           )
