@@ -6,6 +6,8 @@ import Education from "./Education";
 import Experience from "./Experience";
 import JSONExample from "../json/example.json";
 import JSONCleared from "../json/cleared.json";
+import AddButton from "./AddButton";
+import DeleteButton from "./AddButton";
 
 class DataForm extends React.Component {
   constructor(props) {
@@ -37,6 +39,7 @@ class DataForm extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleAddSkill = this.handleAddSkill.bind(this);
     this.handleLoadExampleData = this.handleLoadExampleData.bind(this);
+    this.renderSectionOptions = this.renderSectionOptions.bind(this);
   }
 
   // Spread operator to get all previous properties, so a new object does not get created every time a change happens
@@ -66,6 +69,23 @@ class DataForm extends React.Component {
     })
   }
 
+  renderSectionOptions(isFirstItem) {
+    if (isFirstItem) {
+      return (
+        <>
+          <AddButton />
+        </>
+      )
+    } else {
+      return (
+        <>
+          <AddButton />
+          <DeleteButton />
+        </>
+      )
+    }
+  }
+
   render() {
     const { submitForm } = this.props;
 
@@ -83,9 +103,11 @@ class DataForm extends React.Component {
           handleAddSkill={this.handleAddSkill}
         />
         <Education
+          renderSectionOptions={() => this.renderSectionOptions(true)}
           handleInputChange={(e) => this.handleInputChange(e, "education")}
         />
         <Experience
+          renderSectionOptions={() => this.renderSectionOptions(true)}
           handleInputChange={(e) => this.handleInputChange(e, "experience")}
         />
         <div

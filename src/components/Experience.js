@@ -3,7 +3,9 @@ import FormStyles from "../styles/Form.module.css";
 
 class Experience extends React.Component {
   render() {
-    const { handleInputChange } = this.props;
+    const { handleInputChange, renderSectionOptions } = this.props;
+    
+    const sectionOptions = renderSectionOptions();
 
     return (
       <div className={FormStyles.section}>
@@ -50,12 +52,7 @@ class Experience extends React.Component {
           </div>
           <div className={FormStyles.row}>
             <div className={FormStyles.options}>
-              <button className={FormStyles.button__red} type="button">
-                Delete
-              </button>
-              <button className={FormStyles.button__green} type="button">
-                Add
-              </button>
+              {sectionOptions}
             </div>
           </div>
         </div>
