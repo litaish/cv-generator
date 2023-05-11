@@ -3,7 +3,7 @@ import FormStyles from "../styles/Form.module.css";
 
 class Education extends React.Component {
   render() {
-    const { handleInputChange, renderSectionOptions } = this.props;
+    const { handleInputChange, renderSectionOptions, id } = this.props;
 
     const sectionOptions = renderSectionOptions();
 
@@ -15,41 +15,41 @@ class Education extends React.Component {
         </div>
         <div className={FormStyles.group}>
           <div className={FormStyles.row}>
-            <label htmlFor="ed_institution">Educational Institution</label>
+            <label htmlFor={`ed_institution_${id}`}>Educational Institution</label>
             <input
               name="institution"
               onChange={handleInputChange}
-              id="ed_institution"
+              id={`ed_institution_${id}`}
               type="text"
               placeholder="California Institute of Technology"
             ></input>
           </div>
           <div className={FormStyles.row}>
-            <label htmlFor="ed_level">
+            <label htmlFor={`ed_level_${id}`}>
               Education Level (e.g Bachelors degree) and Program
             </label>
             <input
               name="program"
               onChange={handleInputChange}
-              id="ed_level"
+              id={`ed_level_${id}`}
               type="text"
               placeholder="Master's degree in Computer Science and Robotics"
             ></input>
           </div>
           <div className={FormStyles.row}>
-            <label htmlFor="ed_from_date">Start Date</label>
+            <label htmlFor={`ed_from_date_${id}`}>Start Date</label>
             <input
               name="startDate"
               onChange={handleInputChange}
-              id="ed_from_date"
+              id={`ed_from_date_${id}`}
               type="date"></input>
           </div>
           <div className={FormStyles.row}>
-            <label htmlFor="ed_from_date">End Date</label>
+            <label htmlFor={`ed_to_date_${id}`}>End Date</label>
             <input
               name="endDate"
               onChange={handleInputChange}
-              id="ed_end_date"
+              id={`ed_to_date_${id}`}
               type="date"></input>
           </div>
           <div className={FormStyles.row}>
