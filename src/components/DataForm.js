@@ -10,8 +10,6 @@ class DataForm extends React.Component {
   constructor(props) {
     super(props)
 
-    this.example = JSONExample; // Automatic JSON parsing
-
     this.state = {
       general: {
         name: "",
@@ -57,11 +55,13 @@ class DataForm extends React.Component {
   }
 
   handleLoadExample() {
+    const { general, education, experience, skills } = JSONExample;
+
     this.setState({
-      general: this.example.general,
-      education: this.example.education,
-      experience: this.example.experience,
-      skills: this.example.skills
+      general: general,
+      education: education,
+      experience: experience,
+      skills: skills
     })
   }
 
