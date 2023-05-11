@@ -17,7 +17,8 @@ class App extends Component {
 
   handleSubmit(e, data) {
     e.preventDefault();
-    
+
+    // Set state to passed in form data (form state)
     this.setState({
       formData: data
     })

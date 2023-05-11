@@ -24,11 +24,9 @@ class CV extends React.Component {
             />
             <CVExperience
               experienceSections={experienceSections}
-              isFirstItem={true}
             />
             <CVEducation
               educationSections={educationSections}
-              isFirstItem={true}
             />
           </div>
         </div>

@@ -53,6 +53,7 @@ class DataForm extends React.Component {
     this.handleRemoveSection = this.handleRemoveSection.bind(this);
   }
 
+  // Gets input from specific form section input field and changes state object values
   handleInputChange(e, sectionName, hasMultipleSections, item = {}) {
     if (hasMultipleSections) {
 
@@ -112,7 +113,7 @@ class DataForm extends React.Component {
       return (
         <>
           <AddButton
-            addSection={() => this.handleAddSection(section, newItem)}
+            addSection={() => this.handleAddSection(section, newItem)} // Pass in handleAddSection as prop, by defining which section and the new object
           />
         </>
       )
@@ -120,10 +121,10 @@ class DataForm extends React.Component {
       return (
         <>
           <AddButton
-            addSection={() => this.handleAddSection(section, newItem)}
+            addSection={() => this.handleAddSection(section, newItem)} // Pass in handleAddSection as prop, by defining which section and the new object
           />
           <DeleteButton
-            removeSection={() => this.handleRemoveSection(section, item)}
+            removeSection={() => this.handleRemoveSection(section, item)} // Remove section by id
           />
         </>
       )
@@ -136,6 +137,7 @@ class DataForm extends React.Component {
     }))
   }
 
+  // Set specific section (experienceSections or educationSections) to a new array, filtering previousState array
   handleRemoveSection(section, item) {
     this.setState(prevState => ({
       [section]: prevState[section].filter(x => x.id !== item.id)

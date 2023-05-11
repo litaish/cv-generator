@@ -7,7 +7,7 @@ class DeleteButton extends React.Component {
 
         return (
             <button
-                onClick={removeSection}
+                onClick={removeSection} // Trigger the function passed to Delete Button
                 className={FormStyles.button__red} type="button">
                 Delete Section
             </button>
