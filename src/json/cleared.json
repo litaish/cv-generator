@@ -6,7 +6,25 @@
     "github": "",
     "about": ""
   },
-  "educationSections": [],
-  "experienceSections": [],
+  "educationSections": [
+    {
+      "id": "EB3IB4EL",
+      "isInitial": true,
+      "institution": "",
+      "program": "",
+      "startDate": "",
+      "endDate": ""
+    }
+  ],
+  "experienceSections": [
+    {
+      "id": "990RAPY8",
+      "isInitial": true,
+      "company": "",
+      "desc": "",
+      "startDate": "",
+      "endDate": ""
+    }
+  ],
   "skills": []
 }
