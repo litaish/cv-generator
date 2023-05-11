@@ -21,7 +21,7 @@ class Education extends React.Component {
               onChange={handleInputChange}
               id="ed_institution"
               type="text"
-              placeholder="Harvard"
+              placeholder="California Institute of Technology"
             ></input>
           </div>
           <div className={FormStyles.row}>
@@ -33,7 +33,7 @@ class Education extends React.Component {
               onChange={handleInputChange}
               id="ed_level"
               type="text"
-              placeholder="Master's degree in Computer Science"
+              placeholder="Master's degree in Computer Science and Robotics"
             ></input>
           </div>
           <div className={FormStyles.row}>

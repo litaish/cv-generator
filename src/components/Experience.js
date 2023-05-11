@@ -21,7 +21,7 @@ class Experience extends React.Component {
               onChange={handleInputChange}
               id="company_name"
               type="text"
-              placeholder="Tom's Burgers Inc."
+              placeholder="SpaceX"
             ></input>
           </div>
           <div className={FormStyles.row}>
@@ -31,7 +31,7 @@ class Experience extends React.Component {
               onChange={handleInputChange}
               id="job_description"
               type="text"
-              placeholder="Grilled delicious burgers for everyone"
+              placeholder="Developed immersive training simulations for astronauts"
             ></input>
           </div>
           <div className={FormStyles.row}>

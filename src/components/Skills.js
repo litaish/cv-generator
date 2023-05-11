@@ -16,7 +16,7 @@ class Skills extends React.Component {
             <textarea
               onChange={handleAddSkill}
               id="skills"
-              placeholder="Java"></textarea>
+              placeholder="C++"></textarea>
           </div>
         </div>
       </div>

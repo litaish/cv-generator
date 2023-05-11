@@ -19,7 +19,7 @@ class GeneralInfo extends React.Component {
               onChange={handleInputChange}
               id="full_name"
               type="text"
-              placeholder="George Washington"
+              placeholder="Octavia Levesque"
             ></input>
           </div>
           <div className={FormStyles.row}>
@@ -29,7 +29,7 @@ class GeneralInfo extends React.Component {
               onChange={handleInputChange}
               id="phone"
               type="text"
-              placeholder="(555) 555-1234"
+              placeholder="(720)987-6543"
             ></input>
           </div>
           <div className={FormStyles.row}>
@@ -39,7 +39,7 @@ class GeneralInfo extends React.Component {
               onChange={handleInputChange}
               id="email"
               type="email"
-              placeholder="example@domain.net"
+              placeholder="octavia.rocketeer@outlook.com"
             ></input>
           </div>
           <div className={FormStyles.row}>
@@ -49,7 +49,7 @@ class GeneralInfo extends React.Component {
               onChange={handleInputChange}
               id="github"
               type="text"
-              placeholder="github.com/mygithub"
+              placeholder="github.com/octavia"
             ></input>
           </div>
           <div className={FormStyles.row}>
@@ -58,7 +58,7 @@ class GeneralInfo extends React.Component {
               name="about"
               onChange={handleInputChange}
               id="about_me"
-              placeholder="I am funny"
+              placeholder="Innovative software developer with a fascination for space exploration and virtual reality"
             ></textarea>
           </div>
         </div>
