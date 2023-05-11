@@ -169,7 +169,7 @@ class DataForm extends React.Component {
               id={education.id}
               renderSectionOptions={() => this.renderSectionOptions(education, "educationSections", { // Section name and new object - props to pass to Button components
                 id: uniqid(),
-                isInitial: true,
+                isInitial: false,
                 institution: "",
                 program: "",
                 startDate: "",
@@ -187,7 +187,7 @@ class DataForm extends React.Component {
               id={experience.id}
               renderSectionOptions={() => this.renderSectionOptions(experience, "experienceSections", { // Section name and new object - props to pass to Button components
                 id: uniqid(),
-                isInitial: true,
+                isInitial: false,
                 company: "",
                 desc: "",
                 startDate: "",
