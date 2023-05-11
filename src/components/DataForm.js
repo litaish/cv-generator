@@ -26,8 +26,8 @@ class DataForm extends React.Component {
     const initialEducation = {
       id: uniqid(),
       isInitial: true,
-      company: "",
-      desc: "",
+      institution: "",
+      program: "",
       startDate: "",
       endDate: "",
     }
@@ -44,7 +44,7 @@ class DataForm extends React.Component {
       experience: initialExperience, // Define experience state object as initialExperience at first
       education: initialEducation,
       experienceSections: [initialExperience], // Add initialExperience object to experienceSections array
-      educationSections: [initialEducation]
+      educationSections: [initialEducation],
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -82,30 +82,34 @@ class DataForm extends React.Component {
   }
 
   // Checks if component is initial (first), so it doesn't render a delete section button for it
-  renderSectionOptions(isInitial) {
-    if (isInitial) {
+  renderSectionOptions(item, section, newItem) {
+    if (item.isInitial) {
       return (
         <>
           <AddButton
-            addSection={this.handleAddSection}
+            addSection={() => this.handleAddSection(section, newItem)}
           />
         </>
       )
     } else {
       return (
         <>
-          <AddButton />
+          <AddButton
+            addSection={() => this.handleAddSection(section, newItem)}
+          />
           <DeleteButton />
         </>
       )
     }
   }
 
-  handleAddSection(section, item) {
+  handleAddSection(section, newItem) {
     this.setState(prevState => ({
-      [section]: [prevState[section], item] // Access section from prevState via array, not dot notation
+      [section]: [...prevState[section], newItem] // Access section from prevState via array, not dot notation
     }))
   }
+
+  handleRemoveSection
 
   render() {
     const { submitForm } = this.props;
@@ -131,7 +135,14 @@ class DataForm extends React.Component {
           return (
             <Education
               key={education.id}
-              renderSectionOptions={() => this.renderSectionOptions(education.isInitial)} 
+              renderSectionOptions={() => this.renderSectionOptions(education, "educationSections", { // Section name and new object - props to pass to Button components
+                id: uniqid(),
+                isInitial: false,
+                company: "",
+                desc: "",
+                startDate: "",
+                endDate: "",
+              })}
               handleInputChange={(e) => this.handleInputChange(e, "education")}
             />
           )
@@ -141,7 +152,14 @@ class DataForm extends React.Component {
           return (
             <Experience
               key={experience.id}
-              renderSectionOptions={() => this.renderSectionOptions(experience.isInitial)}
+              renderSectionOptions={() => this.renderSectionOptions(experience, "experienceSections", { // Section name and new object - props to pass to Button components
+                id: uniqid(),
+                isInitial: false,
+                company: "",
+                desc: "",
+                startDate: "",
+                endDate: "",
+              })}
               handleInputChange={(e) => this.handleInputChange(e, "experience")}
             />
           )
