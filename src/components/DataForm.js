@@ -52,6 +52,7 @@ class DataForm extends React.Component {
     this.handleLoadExampleData = this.handleLoadExampleData.bind(this);
     this.renderSectionOptions = this.renderSectionOptions.bind(this);
     this.handleAddSection = this.handleAddSection.bind(this);
+    this.handleRemoveSection = this.handleRemoveSection.bind(this);
   }
 
   // Spread operator to get all previous properties, so a new object does not get created every time a change happens
@@ -97,7 +98,9 @@ class DataForm extends React.Component {
           <AddButton
             addSection={() => this.handleAddSection(section, newItem)}
           />
-          <DeleteButton />
+          <DeleteButton
+            removeSection={() => this.handleRemoveSection(section, item)}
+          />
         </>
       )
     }
@@ -109,7 +112,11 @@ class DataForm extends React.Component {
     }))
   }
 
-  handleRemoveSection
+  handleRemoveSection(section, item) {
+    this.setState(prevState => ({
+      [section]: prevState[section].filter(x => x.id !== item.id)
+    }))
+  }
 
   render() {
     const { submitForm } = this.props;

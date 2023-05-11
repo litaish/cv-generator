@@ -3,8 +3,12 @@ import FormStyles from "../styles/Form.module.css";
 
 class DeleteButton extends React.Component {
     render() {
+        const { removeSection } = this.props;
+
         return (
-            <button className={FormStyles.button__red} type="button">
+            <button
+                onClick={removeSection}
+                className={FormStyles.button__red} type="button">
                 Delete Section
             </button>
         );
