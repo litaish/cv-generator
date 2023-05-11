@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cv-generator/static/css/main.0a4c5a8b.css",
+    "main.js": "/cv-generator/static/js/main.1b578acc.js",
+    "index.html": "/cv-generator/index.html",
+    "main.0a4c5a8b.css.map": "/cv-generator/static/css/main.0a4c5a8b.css.map",
+    "main.1b578acc.js.map": "/cv-generator/static/js/main.1b578acc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a4c5a8b.css",
+    "static/js/main.1b578acc.js"
+  ]
+}
