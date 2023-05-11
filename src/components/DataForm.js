@@ -187,7 +187,7 @@ class DataForm extends React.Component {
               id={experience.id}
               renderSectionOptions={() => this.renderSectionOptions(experience, "experienceSections", { // Section name and new object - props to pass to Button components
                 id: uniqid(),
-                isInitial: false,
+                isInitial: true,
                 company: "",
                 desc: "",
                 startDate: "",
