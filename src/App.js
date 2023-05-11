@@ -30,8 +30,8 @@ class App extends Component {
         <DataForm submitForm={this.handleSubmit} />
         <CV general={formData.general}
           skills={formData.skills}
-          education={formData.education}
-          experience={formData.experience}
+          educationSections={formData.educationSections}
+          experienceSections={formData.experienceSections}
         />
       </div>
     )

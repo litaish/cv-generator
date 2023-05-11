@@ -41,8 +41,6 @@ class DataForm extends React.Component {
         about: ""
       },
       skills: [],
-      experience: initialExperience, // Define experience state object as initialExperience at first
-      education: initialEducation,
       experienceSections: [initialExperience], // Add initialExperience object to experienceSections array
       educationSections: [initialEducation],
     }
@@ -55,14 +53,40 @@ class DataForm extends React.Component {
     this.handleRemoveSection = this.handleRemoveSection.bind(this);
   }
 
-  // Spread operator to get all previous properties, so a new object does not get created every time a change happens
-  handleInputChange(e, sectionName) {
-    this.setState(prevState => ({
-      [sectionName]: {
-        ...prevState[sectionName],
-        [e.target.name]: e.target.value
-      }
-    }))
+  handleInputChange(e, sectionName, hasMultipleSections, item = {}) {
+    if (hasMultipleSections) {
+
+      this.setState(prevState => {
+        // Copy the section state array
+        const newArray = [...prevState[sectionName]];
+
+        // Find index of the object to update in new array
+        const foundIndex = newArray.findIndex(x => x.id === item.id);
+
+        // Update the object in new copied array
+        newArray[foundIndex] = {
+          ...newArray[foundIndex],
+          [e.target.name]: e.target.value
+        };
+
+        // Update the state with the updated array of objects
+        // Return is used because parantheses are omitted off setState
+        return {
+          [sectionName]: newArray
+        };
+
+      })
+
+    } else {
+
+      this.setState(prevState => ({
+        [sectionName]: {
+          ...prevState[sectionName], // Spread operator to get all previous properties, so a new object does not get created every time a change happens
+          [e.target.name]: e.target.value
+        }
+      }))
+
+    }
   }
 
   handleAddSkill(e) {
@@ -130,7 +154,7 @@ class DataForm extends React.Component {
         }}
         className={FormStyles.form}>
         <GeneralInfo
-          handleInputChange={(e) => this.handleInputChange(e, "general")}
+          handleInputChange={(e) => this.handleInputChange(e, "general", false)}
         />
         <Skills
           handleAddSkill={this.handleAddSkill}
@@ -145,13 +169,13 @@ class DataForm extends React.Component {
               id={education.id}
               renderSectionOptions={() => this.renderSectionOptions(education, "educationSections", { // Section name and new object - props to pass to Button components
                 id: uniqid(),
-                isInitial: false,
-                company: "",
-                desc: "",
+                isInitial: true,
+                institution: "",
+                program: "",
                 startDate: "",
                 endDate: "",
               })}
-              handleInputChange={(e) => this.handleInputChange(e, "education")}
+              handleInputChange={(e) => this.handleInputChange(e, "educationSections", true, education)}
             />
           )
         })}
@@ -169,7 +193,7 @@ class DataForm extends React.Component {
                 startDate: "",
                 endDate: "",
               })}
-              handleInputChange={(e) => this.handleInputChange(e, "experience")}
+              handleInputChange={(e) => this.handleInputChange(e, "experienceSections", true, experience)}
             />
           )
         })}
