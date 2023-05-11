@@ -149,8 +149,7 @@ class DataForm extends React.Component {
     return (
       <form
         onSubmit={(e) => {
-          e.preventDefault();
-          submitForm(this.state);
+          submitForm(e, this.state);
         }}
         className={FormStyles.form}>
         <GeneralInfo

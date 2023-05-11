@@ -15,10 +15,15 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(data) {
+  handleSubmit(e, data) {
+    e.preventDefault();
+    
     this.setState({
       formData: data
     })
+
+    // Reset all form fields on submit
+    e.target.reset();
   }
 
   render() {
