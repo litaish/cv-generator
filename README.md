@@ -1,4 +1,5 @@
 A CV generator app built using React class components.
+This app was later converted to functional components
 
 [CVGenerator App](https://litaish.github.io/cv-generator/)
 
