@@ -1,4 +1,5 @@
 A CV generator app built using React class components.
+The app was later converted to functional components
 
 ### App structure
 
